@@ -3,6 +3,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.ListIterator;
+/*
+ * LinkedList implementation(not 100% ready)
+ * 17.06.2017 - 16:41
+ */
 public class LinkList<E> implements List<E> {
     //Node class used to model the Object E
     protected static class Node<E> {
@@ -17,6 +21,8 @@ public class LinkList<E> implements List<E> {
     //Instance variables
     private Node<E> head;
     private int size;
+    
+    //Constructor
     public LinkList() {
         head = null;
         size = 0;
@@ -123,11 +129,13 @@ public class LinkList<E> implements List<E> {
         }
         return false;
     }
-
+    
+    //Returns the iterator for the list
     public Iterator<E> iterator() {
         return new LinkListIterator();
     }
-
+    
+    //Returns the list as an array of objects
     public Object[] toArray() {
         Object[] array = new Object[size()];
         int i = 0;
